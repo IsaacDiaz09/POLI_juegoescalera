@@ -1,20 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.poli.students.game.controller.GameController">
-    <padding>
-        <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-   <Label fx:id="resultsLabel" />
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.poli.students.game.controller.GameController">
 
-    <ImageView fx:id="mapImage" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@../../../../img/map_01.png" />
-    </ImageView>
+    <top>
+        <VBox alignment="CENTER">
+            <Text fx:id="playersList" />
+        </VBox>
+    </top>
 
-    <Button fx:id="test" mnemonicParsing="false" onMouseClicked="#openNewWindow" text="Prueba HTML" />
-    <Button fx:id="gameStart" visible="false" mnemonicParsing="false" onMouseClicked="#doStartGame" text="Iniciar Juego" />
-</VBox>
+    <!-- Button to be placed at the top -->
+    <bottom>
+        <VBox alignment="CENTER">
+            <Button fx:id="addPlayer" mnemonicParsing="false" onMouseClicked="#openNewWindow" text="Agregar jugador" />
+            <Button fx:id="gameStart" mnemonicParsing="false" onMouseClicked="#doStartGame" text="Iniciar Juego" visible="false" />
+        </VBox>
+    </bottom>
+
+    <!-- StackPane to contain the ImageView and Circle, placed in the center of the BorderPane -->
+    <center>
+        <StackPane>
+            <!-- ImageView to display the background image -->
+            <ImageView fx:id="mapImage" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../../../../img/map_01.png" />
+            </ImageView>
+
+            <!-- Circle element to be overlaid on the image -->
+            <Circle id="player1" centerX="400.0" centerY="300.0" layoutX="100.0" layoutY="95.0" radius="5" strokeWidth="2" translateX="-200.0" translateY="170.0">
+                <fill>
+                    <Color green="0.5" blue="1" opacity="0.5" />
+                </fill>
+                <stroke>
+                    <Color green="0.275" blue="0.545" />
+                </stroke>
+            </Circle>
+        </StackPane>
+    </center>
+
+</BorderPane>

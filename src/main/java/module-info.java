@@ -13,4 +13,6 @@ module dev.poli.students.game.poli_juegoescalera {
     exports dev.poli.students.game;
     exports dev.poli.students.game.controller;
     opens dev.poli.students.game.controller to javafx.fxml;
+    exports dev.poli.students.game.model;
+    opens dev.poli.students.game.model to com.fasterxml.jackson.databind, javafx.fxml;
 }

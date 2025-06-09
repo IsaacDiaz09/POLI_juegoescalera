@@ -1,21 +1,23 @@
 package dev.poli.students.game.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.util.Map;
 
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class Question {
 
-    private String textValue;
-    private List<Answer> answers;
+    @JsonProperty("question")
+    private String question;
 
-    @Getter
-    @AllArgsConstructor
-    static class Answer {
-        private String textValue;
-        private boolean valid;
-    }
+    @JsonProperty("answers")
+    private Map<String, String> answers;
+
+    @JsonProperty("correct")
+    private String correctAnswer;
 }

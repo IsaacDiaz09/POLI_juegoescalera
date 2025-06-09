@@ -1,0 +1,964 @@
+{
+  "questions": [
+    {
+      "question": "<p>¿Cuánto es 5 + 3?</p>",
+      "answers": {
+        "a": "7",
+        "b": "8",
+        "c": "9",
+        "d": "6"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 10 - 4?</p>",
+      "answers": {
+        "a": "6",
+        "b": "5",
+        "c": "7",
+        "d": "8"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuánto es 7 x 2?</p>",
+      "answers": {
+        "a": "12",
+        "b": "14",
+        "c": "16",
+        "d": "10"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 15 / 3?</p>",
+      "answers": {
+        "a": "4",
+        "b": "6",
+        "c": "5",
+        "d": "7"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 8 + 9?</p>",
+      "answers": {
+        "a": "17",
+        "b": "16",
+        "c": "18",
+        "d": "15"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 20 - 7?</p>",
+      "answers": {
+        "a": "12",
+        "b": "14",
+        "c": "13",
+        "d": "15"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 6 x 4?</p>",
+      "answers": {
+        "a": "22",
+        "b": "20",
+        "c": "24",
+        "d": "26"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 25 / 5?</p>",
+      "answers": {
+        "a": "5",
+        "b": "4",
+        "c": "6",
+        "d": "7"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuánto es 12 + 5?</p>",
+      "answers": {
+        "a": "16",
+        "b": "17",
+        "c": "18",
+        "d": "19"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 18 - 9?</p>",
+      "answers": {
+        "a": "8",
+        "b": "10",
+        "c": "7",
+        "d": "9"
+      },
+      "correct": "d"
+    },
+    {
+      "question": "<p>¿Cuánto es 3 x 8?</p>",
+      "answers": {
+        "a": "21",
+        "b": "24",
+        "c": "27",
+        "d": "22"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 30 / 6?</p>",
+      "answers": {
+        "a": "6",
+        "b": "4",
+        "c": "5",
+        "d": "7"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 11 + 7?</p>",
+      "answers": {
+        "a": "18",
+        "b": "17",
+        "c": "19",
+        "d": "16"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 22 - 5?</p>",
+      "answers": {
+        "a": "16",
+        "b": "18",
+        "c": "17",
+        "d": "15"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 9 x 3?</p>",
+      "answers": {
+        "a": "24",
+        "b": "27",
+        "c": "30",
+        "d": "21"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 40 / 8?</p>",
+      "answers": {
+        "a": "4",
+        "b": "6",
+        "c": "5",
+        "d": "7"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 14 + 6?</p>",
+      "answers": {
+        "a": "20",
+        "b": "19",
+        "c": "21",
+        "d": "18"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 25 - 8?</p>",
+      "answers": {
+        "a": "16",
+        "b": "17",
+        "c": "18",
+        "d": "19"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuánto es 5 x 7?</p>",
+      "answers": {
+        "a": "30",
+        "b": "40",
+        "c": "35",
+        "d": "45"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 36 / 9?</p>",
+      "answers": {
+        "a": "4",
+        "b": "3",
+        "c": "5",
+        "d": "6"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuánto es 13 + 8?</p>",
+      "answers": {
+        "a": "20",
+        "b": "21",
+        "c": "22",
+        "d": "23"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 28 - 9?</p>",
+      "answers": {
+        "a": "18",
+        "b": "20",
+        "c": "17",
+        "d": "19"
+      },
+      "correct": "d"
+    },
+    {
+      "question": "<p>¿Cuánto es 4 x 9?</p>",
+      "answers": {
+        "a": "32",
+        "b": "36",
+        "c": "40",
+        "d": "34"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 45 / 5?</p>",
+      "answers": {
+        "a": "8",
+        "b": "10",
+        "c": "9",
+        "d": "7"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 16 + 7?</p>",
+      "answers": {
+        "a": "23",
+        "b": "22",
+        "c": "24",
+        "d": "21"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 32 - 6?</p>",
+      "answers": {
+        "a": "25",
+        "b": "27",
+        "c": "26",
+        "d": "28"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 8 x 6?</p>",
+      "answers": {
+        "a": "42",
+        "b": "48",
+        "c": "54",
+        "d": "46"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 48 / 8?</p>",
+      "answers": {
+        "a": "5",
+        "b": "7",
+        "c": "6",
+        "d": "8"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 15 + 9?</p>",
+      "answers": {
+        "a": "24",
+        "b": "23",
+        "c": "25",
+        "d": "22"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 35 - 7?</p>",
+      "answers": {
+        "a": "27",
+        "b": "28",
+        "c": "29",
+        "d": "26"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuánto es 7 x 7?</p>",
+      "answers": {
+        "a": "42",
+        "b": "56",
+        "c": "49",
+        "d": "48"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 54 / 6?</p>",
+      "answers": {
+        "a": "8",
+        "b": "10",
+        "c": "9",
+        "d": "7"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 17 + 6?</p>",
+      "answers": {
+        "a": "23",
+        "b": "22",
+        "c": "24",
+        "d": "21"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 40 - 5?</p>",
+      "answers": {
+        "a": "34",
+        "b": "36",
+        "c": "35",
+        "d": "37"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 6 x 9?</p>",
+      "answers": {
+        "a": "54",
+        "b": "56",
+        "c": "52",
+        "d": "58"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 63 / 7?</p>",
+      "answers": {
+        "a": "8",
+        "b": "9",
+        "c": "7",
+        "d": "10"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuánto es 19 + 4?</p>",
+      "answers": {
+        "a": "22",
+        "b": "24",
+        "c": "23",
+        "d": "25"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 42 - 7?</p>",
+      "answers": {
+        "a": "35",
+        "b": "34",
+        "c": "36",
+        "d": "33"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuánto es 8 x 8?</p>",
+      "answers": {
+        "a": "60",
+        "b": "64",
+        "c": "72",
+        "d": "68"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 72 / 9?</p>",
+      "answers": {
+        "a": "7",
+        "b": "9",
+        "c": "8",
+        "d": "10"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 21 + 9?</p>",
+      "answers": {
+        "a": "30",
+        "b": "29",
+        "c": "31",
+        "d": "28"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 50 - 10?</p>",
+      "answers": {
+        "a": "30",
+        "b": "40",
+        "c": "50",
+        "d": "60"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuánto es 10 x 5?</p>",
+      "answers": {
+        "a": "45",
+        "b": "55",
+        "c": "50",
+        "d": "60"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 81 / 9?</p>",
+      "answers": {
+        "a": "8",
+        "b": "10",
+        "c": "9",
+        "d": "7"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 25 + 10?</p>",
+      "answers": {
+        "a": "35",
+        "b": "34",
+        "c": "36",
+        "d": "33"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 45 - 9?</p>",
+      "answers": {
+        "a": "35",
+        "b": "37",
+        "c": "36",
+        "d": "34"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 9 x 9?</p>",
+      "answers": {
+        "a": "80",
+        "b": "81",
+        "c": "82",
+        "d": "79"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 90 / 10?</p>",
+      "answers": {
+        "a": "8",
+        "b": "10",
+        "c": "9",
+        "d": "11"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 30 + 15?</p>",
+      "answers": {
+        "a": "45",
+        "b": "44",
+        "c": "46",
+        "d": "43"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 60 - 20?</p>",
+      "answers": {
+        "a": "30",
+        "b": "40",
+        "c": "50",
+        "d": "20"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuánto es 11 x 5?</p>",
+      "answers": {
+        "a": "50",
+        "b": "60",
+        "c": "55",
+        "d": "65"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 100 / 10?</p>",
+      "answers": {
+        "a": "10",
+        "b": "9",
+        "c": "11",
+        "d": "12"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuánto es 22 + 11?</p>",
+      "answers": {
+        "a": "32",
+        "b": "33",
+        "c": "34",
+        "d": "31"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 33 - 11?</p>",
+      "answers": {
+        "a": "21",
+        "b": "23",
+        "c": "22",
+        "d": "24"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 12 x 3?</p>",
+      "answers": {
+        "a": "33",
+        "b": "36",
+        "c": "39",
+        "d": "30"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 44 / 4?</p>",
+      "answers": {
+        "a": "10",
+        "b": "12",
+        "c": "11",
+        "d": "13"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 25 + 5?</p>",
+      "answers": {
+        "a": "30",
+        "b": "29",
+        "c": "31",
+        "d": "28"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 50 - 25?</p>",
+      "answers": {
+        "a": "24",
+        "b": "25",
+        "c": "26",
+        "d": "23"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuánto es 10 x 10?</p>",
+      "answers": {
+        "a": "90",
+        "b": "110",
+        "c": "100",
+        "d": "120"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 121 / 11?</p>",
+      "answers": {
+        "a": "10",
+        "b": "12",
+        "c": "11",
+        "d": "13"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 35 + 10?</p>",
+      "answers": {
+        "a": "45",
+        "b": "44",
+        "c": "46",
+        "d": "43"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 70 - 30?</p>",
+      "answers": {
+        "a": "30",
+        "b": "40",
+        "c": "50",
+        "d": "20"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuánto es 15 x 2?</p>",
+      "answers": {
+        "a": "25",
+        "b": "35",
+        "c": "30",
+        "d": "40"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 60 / 6?</p>",
+      "answers": {
+        "a": "10",
+        "b": "9",
+        "c": "11",
+        "d": "12"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuánto es 40 + 20?</p>",
+      "answers": {
+        "a": "50",
+        "b": "60",
+        "c": "70",
+        "d": "80"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 80 - 40?</p>",
+      "answers": {
+        "a": "30",
+        "b": "50",
+        "c": "40",
+        "d": "60"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 20 x 4?</p>",
+      "answers": {
+        "a": "60",
+        "b": "80",
+        "c": "100",
+        "d": "70"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 80 / 8?</p>",
+      "answers": {
+        "a": "9",
+        "b": "11",
+        "c": "10",
+        "d": "12"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 50 + 25?</p>",
+      "answers": {
+        "a": "75",
+        "b": "74",
+        "c": "76",
+        "d": "73"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 100 - 50?</p>",
+      "answers": {
+        "a": "40",
+        "b": "50",
+        "c": "60",
+        "d": "70"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuánto es 25 x 3?</p>",
+      "answers": {
+        "a": "70",
+        "b": "80",
+        "c": "75",
+        "d": "85"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 75 / 3?</p>",
+      "answers": {
+        "a": "25",
+        "b": "24",
+        "c": "26",
+        "d": "23"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuánto es 60 + 30?</p>",
+      "answers": {
+        "a": "80",
+        "b": "90",
+        "c": "100",
+        "d": "70"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 90 - 30?</p>",
+      "answers": {
+        "a": "50",
+        "b": "70",
+        "c": "60",
+        "d": "80"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 30 x 3?</p>",
+      "answers": {
+        "a": "80",
+        "b": "90",
+        "c": "100",
+        "d": "70"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 90 / 3?</p>",
+      "answers": {
+        "a": "20",
+        "b": "40",
+        "c": "30",
+        "d": "50"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 70 + 20?</p>",
+      "answers": {
+        "a": "90",
+        "b": "80",
+        "c": "100",
+        "d": "60"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 80 - 20?</p>",
+      "answers": {
+        "a": "50",
+        "b": "60",
+        "c": "70",
+        "d": "90"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuánto es 40 x 2?</p>",
+      "answers": {
+        "a": "70",
+        "b": "90",
+        "c": "80",
+        "d": "100"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 60 / 2?</p>",
+      "answers": {
+        "a": "30",
+        "b": "20",
+        "c": "40",
+        "d": "50"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuánto es 90 + 10?</p>",
+      "answers": {
+        "a": "90",
+        "b": "100",
+        "c": "110",
+        "d": "80"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 100 - 10?</p>",
+      "answers": {
+        "a": "80",
+        "b": "110",
+        "c": "90",
+        "d": "100"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 50 x 2?</p>",
+      "answers": {
+        "a": "90",
+        "b": "100",
+        "c": "110",
+        "d": "120"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 100 / 2?</p>",
+      "answers": {
+        "a": "40",
+        "b": "60",
+        "c": "50",
+        "d": "70"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 3 + 4?</p>",
+      "answers": {
+        "a": "7",
+        "b": "6",
+        "c": "8",
+        "d": "5"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 12 - 6?</p>",
+      "answers": {
+        "a": "5",
+        "b": "6",
+        "c": "7",
+        "d": "8"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuánto es 5 x 6?</p>",
+      "answers": {
+        "a": "25",
+        "b": "35",
+        "c": "30",
+        "d": "40"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 24 / 4?</p>",
+      "answers": {
+        "a": "6",
+        "b": "5",
+        "c": "7",
+        "d": "8"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuánto es 9 + 5?</p>",
+      "answers": {
+        "a": "13",
+        "b": "14",
+        "c": "15",
+        "d": "12"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 16 - 8?</p>",
+      "answers": {
+        "a": "7",
+        "b": "9",
+        "c": "8",
+        "d": "6"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 7 x 3?</p>",
+      "answers": {
+        "a": "18",
+        "b": "21",
+        "c": "24",
+        "d": "20"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 32 / 4?</p>",
+      "answers": {
+        "a": "7",
+        "b": "9",
+        "c": "8",
+        "d": "6"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 14 + 7?</p>",
+      "answers": {
+        "a": "21",
+        "b": "20",
+        "c": "22",
+        "d": "19"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 30 - 15?</p>",
+      "answers": {
+        "a": "14",
+        "b": "15",
+        "c": "16",
+        "d": "13"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuánto es 6 x 6?</p>",
+      "answers": {
+        "a": "30",
+        "b": "42",
+        "c": "36",
+        "d": "40"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 49 / 7?</p>",
+      "answers": {
+        "a": "6",
+        "b": "8",
+        "c": "7",
+        "d": "9"
+      },
+      "correct": "c"
+    }
+  ]
+}

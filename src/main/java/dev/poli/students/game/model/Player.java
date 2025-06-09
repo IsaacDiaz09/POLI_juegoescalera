@@ -2,9 +2,11 @@ package dev.poli.students.game.model;
 
 import javafx.scene.paint.Color;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 @Getter
+@EqualsAndHashCode
 public class Player {
     private final String name;
     private final Color color;

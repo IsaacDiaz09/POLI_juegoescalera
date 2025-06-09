@@ -15,4 +15,5 @@
     <ColorPicker fx:id="playerColorPicker" layoutX="238.0" layoutY="188.0"/>
 
     <Button fx:id="addPlayer" mnemonicParsing="false" onMouseClicked="#addPlayer" text="Agregar Jugador" />
+
 </VBox>

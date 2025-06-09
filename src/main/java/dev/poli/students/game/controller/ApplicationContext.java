@@ -12,8 +12,22 @@ public class ApplicationContext {
         }
     }
 
+    public static void addBean(String key, Object bean) {
+        if (bean != null) {
+            CONTEXT.put(key, bean);
+        }
+    }
+
     public static <T> T getBean(Class<T> beanType) {
         Object bean = CONTEXT.get(beanType.getCanonicalName());
+        if (bean == null) {
+            throw new IllegalArgumentException("No bean found of type " + beanType);
+        }
+        return beanType.cast(bean);
+    }
+
+    public static <T> T getBean(String beanName, Class<T> beanType) {
+        Object bean = CONTEXT.get(beanName);
         if (bean == null) {
             throw new IllegalArgumentException("No bean found of type " + beanType);
         }
