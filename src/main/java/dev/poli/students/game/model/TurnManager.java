@@ -1,9 +1,13 @@
 package dev.poli.students.game.model;
 
+import lombok.Getter;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class TurnManager {
+    @Getter
+    private Player player;
     private final List<String> state;
     private final List<Player> players;
 
@@ -24,6 +28,12 @@ public class TurnManager {
         Player p = players.get(state.size());
         state.add(p.getName());
         p.nextTurn();
+        this.player = p;
         return p;
     }
+
+    public void incrementOkAnsweredQuestions() {
+        this.player.okAnsweredQuestion();
+    }
+
 }

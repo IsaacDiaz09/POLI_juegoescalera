@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import java.security.SecureRandom;
 import java.util.List;
+import java.util.Optional;
 
 @Getter
 @AllArgsConstructor
@@ -26,5 +27,11 @@ public class Questions {
     public Question getRandomQuestion() {
         int i = RANDOM.nextInt(this.questions.size());
         return this.questions.get(i);
+    }
+
+    public Optional<Question> findQuestion(String question) {
+        return this.questions.stream()
+                .filter(q -> q.getQuestion().equals(question))
+                .findFirst();
     }
 }

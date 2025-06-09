@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Map;
 
 public class GameController {
 
@@ -53,7 +54,7 @@ public class GameController {
         addPlayer.setDisable(true);
 
         initializeApplicationContext();
-        startGame();
+        displayQuestion();
     }
 
     public void openNewWindow() throws IOException {
@@ -111,27 +112,35 @@ public class GameController {
         ApplicationContext.addBean(new TurnManager(PlayerController.PLAYERS));
     }
 
-    private void startGame() {
+    private void displayQuestion() {
         // show question dialog
         BorderPane root = new BorderPane();
 
         Stage stage = new Stage();
         stage.setResizable(false);
-        stage.setTitle("Pregunta");
 
         final WebView webView = new WebView();
         webView.setVisible(true);
-        webView.getEngine().loadContent("<p>¿Cuánto es 5 + 3?</p>");
+
+        Question question = ApplicationContext.getBean(Questions.EASY, Questions.class)
+                .getRandomQuestion();
+
+        TurnManager turnManager = ApplicationContext.getBean(TurnManager.class);
+        Player player = turnManager.nextTurn();
+        logger.info("turno de {}", player.getName());
+
+        stage.setTitle("Turno de: " + player.getName());
+        webView.getEngine().loadContent(question.getQuestion());
 
         HBox buttonsContainer = new HBox(10);
         buttonsContainer.setAlignment(Pos.CENTER);
         buttonsContainer.setPadding(new Insets(15, 15, 15, 15));
 
-        for (int i = 0; i < 4; i++) {
-            Button button = new Button("button-" + i);
-            button.setText("Button " + i);
+        for (Map.Entry<String, String> answer : question.getAnswers().entrySet()) {
+            Button button = new Button("button-" + answer.hashCode());
+            button.setText(answer.getValue());
             button.setVisible(true);
-            button.setOnAction(this::questionAnswered);
+            button.setOnAction((e) -> questionAnswered(e, turnManager, question));
             buttonsContainer.getChildren().add(button);
         }
 
@@ -147,9 +156,27 @@ public class GameController {
         stage.show();
     }
 
-    private void questionAnswered(ActionEvent event) {
+    private void questionAnswered(ActionEvent event, TurnManager turnManager, Question question) {
         Button source = (Button) event.getSource();
-        System.out.println();
+        String answer = source.getText();
+        turnManager.incrementOkAnsweredQuestions();
+
+        Map.Entry<String, String> answerEntry = getEntryByValue(answer, question.getAnswers());
+
+        if (answerEntry.getValue().equals(answer)) {
+            logger.info("La respuesta es correcta: [{}/{}]", question.getQuestion(), answer);
+        } else {
+            logger.error("La respuesta es incorrecta");
+        }
+    }
+
+    private Map.Entry<String, String> getEntryByValue(String value, Map<String, String> answers) {
+        for (Map.Entry<String, String> a : answers.entrySet()) {
+            if (a.getValue().equals(value)) {
+                return a;
+            }
+        }
+        return null;
     }
 
     private Question getQuestion() {
