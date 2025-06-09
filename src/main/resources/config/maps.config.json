@@ -1,0 +1,51 @@
+{
+  "default_map": "map_01",
+  "maps": [
+    {
+      "map_id": "map_01",
+      "img_path": "./src/main/resources/img/map_01.png",
+      "comodins": [
+        {
+          "from": 4,
+          "to": 38
+        },
+        {
+          "from": 12,
+          "to": 32
+        },
+        {
+          "from": 59,
+          "to": 62
+        },
+        {
+          "from": 60,
+          "to": 23
+        },
+        {
+          "from": 46,
+          "to": 7
+        },
+        {
+          "from": 75,
+          "to": 25
+        },
+        {
+          "from": 74,
+          "to": 52
+        },
+        {
+          "from": 71,
+          "to": 50
+        },
+        {
+          "from": 69,
+          "to": 89
+        },
+        {
+          "from": 97,
+          "to": 78
+        }
+      ]
+    }
+  ]
+}

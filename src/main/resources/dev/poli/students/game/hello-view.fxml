@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.poli.students.game.controller.GameController">
+    <padding>
+        <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Label fx:id="resultsLabel" />
+
+    <ImageView fx:id="mapImage" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../../../img/map_01.png" />
+    </ImageView>
+
+    <Button fx:id="test" mnemonicParsing="false" onMouseClicked="#openNewWindow" text="Prueba HTML" />
+    <Button fx:id="gameStart" visible="false" mnemonicParsing="false" onMouseClicked="#doStartGame" text="Iniciar Juego" />
+</VBox>
