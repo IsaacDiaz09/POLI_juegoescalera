@@ -161,22 +161,13 @@ public class GameController {
         String answer = source.getText();
         turnManager.incrementOkAnsweredQuestions();
 
-        Map.Entry<String, String> answerEntry = getEntryByValue(answer, question.getAnswers());
+        String correctAnswer = question.getAnswers().get(question.getCorrectAnswer());
 
-        if (answerEntry.getValue().equals(answer)) {
+        if (answer.equals(correctAnswer)) {
             logger.info("La respuesta es correcta: [{}/{}]", question.getQuestion(), answer);
         } else {
             logger.error("La respuesta es incorrecta");
         }
-    }
-
-    private Map.Entry<String, String> getEntryByValue(String value, Map<String, String> answers) {
-        for (Map.Entry<String, String> a : answers.entrySet()) {
-            if (a.getValue().equals(value)) {
-                return a;
-            }
-        }
-        return null;
     }
 
     private Question getQuestion() {
