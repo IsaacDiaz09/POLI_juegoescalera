@@ -1,16 +1,9 @@
 package dev.poli.students.game.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
 import java.security.SecureRandom;
 import java.util.List;
 import java.util.Optional;
 
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
 public class Questions {
 
     private static final SecureRandom RANDOM = new SecureRandom();
@@ -33,5 +26,16 @@ public class Questions {
         return this.questions.stream()
                 .filter(q -> q.getQuestion().equals(question))
                 .findFirst();
+    }
+
+    public Questions() {
+    }
+
+    public Questions(List<Question> questions) {
+        this.questions = questions;
+    }
+
+    public List<Question> getQuestions() {
+        return questions;
     }
 }

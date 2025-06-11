@@ -94,14 +94,10 @@ public class GameController {
         Path configuration = Paths.get("src/main/resources/config/maps.config.json");
         MapsConfiguration gameMaps = mapper.readValue(Files.readAllBytes(configuration), MapsConfiguration.class);
         ApplicationContext.addBean(gameMaps);
-        GameConfiguration gameConfig = GameConfiguration.builder()
-                .mapConfiguration(gameMaps.defaultMap())
-                .maps(gameMaps)
-                .build();
-        Game game = Game.builder()
-                .configuration(gameConfig)
-                .players(PlayerController.PLAYERS)
-                .build();
+
+        GameConfiguration gameConfig = new GameConfiguration(gameMaps.defaultMap(),gameMaps);
+
+        Game game = new Game(PlayerController.PLAYERS, gameConfig);
         ApplicationContext.addBean(game);
 
         // load questions

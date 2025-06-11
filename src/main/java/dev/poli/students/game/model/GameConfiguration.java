@@ -1,13 +1,19 @@
 package dev.poli.students.game.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-
-@Getter
-@Builder
-@AllArgsConstructor
 public class GameConfiguration {
-    private MapsConfiguration maps;
-    private MapConfiguration mapConfiguration;
+    private final MapsConfiguration maps;
+    private final MapConfiguration mapConfiguration;
+
+    public MapsConfiguration getMaps() {
+        return maps;
+    }
+
+    public MapConfiguration getMapConfiguration() {
+        return mapConfiguration;
+    }
+
+    public GameConfiguration(MapConfiguration mapConfiguration, MapsConfiguration maps) {
+        this.mapConfiguration = mapConfiguration;
+        this.maps = maps;
+    }
 }

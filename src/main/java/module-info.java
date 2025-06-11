@@ -3,7 +3,6 @@ module dev.poli.students.game.poli_juegoescalera {
     requires javafx.fxml;
     requires javafx.web;
     requires java.desktop;
-    requires static lombok;
     requires com.fasterxml.jackson.annotation;
     requires org.slf4j;
     requires com.fasterxml.jackson.databind;

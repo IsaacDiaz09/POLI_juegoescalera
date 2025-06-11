@@ -30,10 +30,7 @@ public class PlayerController {
         String playerName = playerNameTextField.getText();
         Color playerColor = playerColorPicker.getValue();
 
-        PLAYERS.add(Player.builder()
-                .name(playerName)
-                .color(playerColor)
-                .build());
+        PLAYERS.add(new Player(playerName ,playerColor));
 
         stage.close();
     }

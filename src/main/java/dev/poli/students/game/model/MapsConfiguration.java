@@ -2,15 +2,9 @@ package dev.poli.students.game.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
 public class MapsConfiguration {
 
     public enum ComodinType {
@@ -35,5 +29,21 @@ public class MapsConfiguration {
                     .orElseThrow(() -> new IllegalStateException("Default map not found"));
         }
         return DEFAULT_MAP;
+    }
+
+    public static MapConfiguration getDefaultMap() {
+        return DEFAULT_MAP;
+    }
+
+    public List<MapConfiguration> getMaps() {
+        return maps;
+    }
+
+    public MapsConfiguration() {
+    }
+
+    public MapsConfiguration(String defaultMap, List<MapConfiguration> maps) {
+        this.defaultMap = defaultMap;
+        this.maps = maps;
     }
 }

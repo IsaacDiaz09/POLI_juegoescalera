@@ -1,26 +1,40 @@
 package dev.poli.students.game.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NonNull;
-
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
-@Getter
 public class Game {
 
-    @Getter
-    @Builder
-    @AllArgsConstructor
     public static class GameTurn {
-        private int consecutive;
-        private Player player;
-        private String questionText;
-        private String answerText;
+        private final int consecutive;
+        private final Player player;
+        private final String questionText;
+        private final String answerText;
+
+        public GameTurn(int consecutive, Player player, String questionText, String answerText) {
+            this.consecutive = consecutive;
+            this.player = player;
+            this.questionText = questionText;
+            this.answerText = answerText;
+        }
+
+        public String getAnswerText() {
+            return answerText;
+        }
+
+        public String getQuestionText() {
+            return questionText;
+        }
+
+        public Player getPlayer() {
+            return player;
+        }
+
+        public int getConsecutive() {
+            return consecutive;
+        }
     }
 
     private final List<Player> players;
@@ -30,23 +44,18 @@ public class Game {
     private Instant endTime;
     private Player winner;
 
-    @Builder
     public Game(List<Player> players, GameConfiguration configuration) {
-        this.players = players;
+        this.players = Collections.unmodifiableList(players);
         this.configuration = configuration;
         this.startTime = Instant.now();
     }
 
     public void adddTurn(String playerId, String question, String answer) {
         int consecutive = this.playedTurns.size() + 1;
-        this.playedTurns.add(GameTurn.builder()
-                .consecutive(consecutive)
-                .questionText(question)
-                .answerText(answer)
-                .build());
+        this.playedTurns.add(new GameTurn(consecutive, findPlayer(playerId), question, answer));
     }
 
-    public void declareWinner(@NonNull Player winner) {
+    public void declareWinner(Player winner) {
         if (this.winner == null) {
             this.endTime = Instant.now();
             this.winner = winner;
@@ -55,17 +64,34 @@ public class Game {
         }
     }
 
-    public void nextTurn(String playerId) {
-        findPlayer(playerId).ifPresent(Player::nextTurn);
-    }
-
-    public void incrementOkAnsweredQuestion(String playerId) {
-        findPlayer(playerId).ifPresent(Player::okAnsweredQuestion);
-    }
-
-    public Optional<Player> findPlayer(String playerId) {
+    public Player findPlayer(String playerId) {
         return this.players.stream()
                 .filter(p -> p.getName().equals(playerId))
-                .findFirst();
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Player not found"));
+    }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public List<GameTurn> getPlayedTurns() {
+        return playedTurns;
+    }
+
+    public GameConfiguration getConfiguration() {
+        return configuration;
+    }
+
+    public Instant getStartTime() {
+        return startTime;
+    }
+
+    public Instant getEndTime() {
+        return endTime;
+    }
+
+    public Player getWinner() {
+        return winner;
     }
 }
