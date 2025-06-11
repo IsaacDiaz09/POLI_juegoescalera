@@ -77,39 +77,28 @@
                 <version>3.6.3</version>
 
                 <executions>
-                    <!-- Evita el aggregate -->
                     <execution>
                         <id>skip-aggregate</id>
                         <goals><goal>aggregate</goal></goals>
                         <configuration><skip>true</skip></configuration>
                     </execution>
-
-                    <!-- Javadoc solo del modelo -->
                     <execution>
                         <id>model-javadoc</id>
                         <phase>verify</phase>
                         <goals><goal>javadoc</goal></goals>
 
                         <configuration>
-                            <!-- Ruta absoluta a los .java -->
                             <sourcepath>${project.basedir}/src/main/java</sourcepath>
-
-                            <!-- Solo compilar el paquete model -->
                             <includes>
                                 <include>dev/poli/students/game/model/**</include>
                             </includes>
 
-                            <!-- Necesario por los espacios en “Juego escalera” -->
                             <useStandardDocletOptions>true</useStandardDocletOptions>
-
-                            <!-- Opciones comunes -->
                             <source>11</source>
                             <encoding>UTF-8</encoding>
                             <docencoding>UTF-8</docencoding>
                             <charset>UTF-8</charset>
                             <failOnError>false</failOnError>
-
-                            <!-- Si usas clases JavaFX dentro del modelo -->
                             <additionalJOptions>
                                 <additionalJOption>
                                     --add-modules javafx.controls,javafx.graphics
