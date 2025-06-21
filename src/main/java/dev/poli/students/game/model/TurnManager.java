@@ -1,5 +1,7 @@
 package dev.poli.students.game.model;
 
+import javafx.scene.shape.Circle;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,14 +15,20 @@ import java.util.stream.Collectors;
  */
 public class TurnManager {
 
-    /** Jugador cuyo turno está en curso (último entregado por {@link #nextTurn()}). */
+    /**
+     * Jugador cuyo turno está en curso (último entregado por {@link #nextTurn()}).
+     */
     private Player player;
 
-    /** Registra los nombres de los jugadores que ya han jugado en la ronda. */
+    /**
+     * Registra los nombres de los jugadores que ya han jugado en la ronda.
+     */
     private final List<String> state;
 
-    /** Lista inmutable de todos los jugadores de la partida. */
-    private final List<Player> players;
+    /**
+     * Lista inmutable de todos los jugadores de la partida.
+     */
+    private final List<Pair<Player, Circle>> players;
 
     /* ------------------------------------------------------------------ */
     /*                            Constructor                             */
@@ -32,13 +40,13 @@ public class TurnManager {
      * @param players lista de jugadores (no puede estar vacía).
      * @throws IllegalArgumentException si la lista está vacía.
      */
-    public TurnManager(List<Player> players) {
+    public TurnManager(List<Pair<Player, Circle>> players) {
         if (players.isEmpty()) {
             throw new IllegalArgumentException("No players found");
         }
         this.players = players;
-        this.state   = this.players.stream()
-                .map(Player::getName)
+        this.state = this.players.stream()
+                .map((p) -> p.getLeft().getName())
                 .collect(Collectors.toList());
     }
 
@@ -54,17 +62,17 @@ public class TurnManager {
      *
      * @return jugador al que le toca el turno.
      */
-    public Player nextTurn() {
+    public Pair<Player, Circle> nextTurn() {
         // Si la ronda terminó, limpiamos la bitácora de turnos
         if (state.size() == this.players.size()) {
             this.state.clear();
         }
 
         // El siguiente jugador es el que corresponde al tamaño actual del state
-        Player p = players.get(state.size());
-        state.add(p.getName()); // registramos que ya jugó
-        p.nextTurn();           // actualizamos su contador interno
-        this.player = p;        // lo marcamos como jugador actual
+        Pair<Player, Circle> p = players.get(state.size());
+        state.add(p.getLeft().getName()); // registramos que ya jugó
+        p.getLeft().nextTurn();           // actualizamos su contador interno
+        this.player = p.getLeft();        // lo marcamos como jugador actual
         return p;
     }
 
@@ -84,7 +92,7 @@ public class TurnManager {
      * Devuelve el jugador que tiene actualmente el turno.
      *
      * @return jugador en turno, o {@code null} si aún no se ha invocado
-     *         {@link #nextTurn()}.
+     * {@link #nextTurn()}.
      */
     public Player getPlayer() {
         return player;

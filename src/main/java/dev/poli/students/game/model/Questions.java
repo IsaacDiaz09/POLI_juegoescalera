@@ -3,6 +3,7 @@ package dev.poli.students.game.model;
 import java.security.SecureRandom;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 /**
  * Contenedor de un banco de preguntas y utilidades para consultarlo.
@@ -22,11 +23,25 @@ public class Questions {
     /*                               Constantes                           */
     /* ------------------------------------------------------------------ */
 
-    /** Fuente de aleatoriedad para elegir preguntas sin sesgo. */
+    /**
+     * Fuente de aleatoriedad para elegir preguntas sin sesgo.
+     */
     private static final SecureRandom RANDOM = new SecureRandom();
 
-    /** Clave JSON utilizada por los archivos de nivel “fácil”. */
+    /**
+     * Clave JSON utilizada por los archivos de nivel “fácil”.
+     */
     public static final String EASY = "easy_questions";
+
+    /**
+     * Clave JSON utilizada por los archivos de nivel “fácil”.
+     */
+    public static final String MEDIUM = "medium_questions";
+
+    /**
+     * Clave JSON utilizada por los archivos de nivel “dificil”.
+     */
+    public static final String HARD = "hard_questions";
 
     /**
      * Dificultad asociada a un grupo de preguntas.
@@ -34,16 +49,36 @@ public class Questions {
      * o filtrar bancos de preguntas en memoria.
      */
     public enum Difficulty {
-        EASY,
-        MEDIUM,
-        HARD
+        EASY("Facil"),
+        MEDIUM("Medio"),
+        HARD("Dificil");
+
+        Difficulty(String description) {
+            this.description = description;
+        }
+
+        public Difficulty byName(String name) {
+            return Stream.of(Difficulty.values())
+                    .filter(d -> d.toString().equals(name))
+                    .findFirst()
+                    .orElseThrow();
+        }
+
+        private final String description;
+
+        @Override
+        public String toString() {
+            return this.description;
+        }
     }
 
     /* ------------------------------------------------------------------ */
     /*                               Campos                               */
     /* ------------------------------------------------------------------ */
 
-    /** Lista de preguntas contenida en el banco. */
+    /**
+     * Lista de preguntas contenida en el banco.
+     */
     private List<Question> questions;
 
     /* ------------------------------------------------------------------ */
@@ -80,8 +115,11 @@ public class Questions {
     /*                            Constructores                           */
     /* ------------------------------------------------------------------ */
 
-    /** Constructor vacío (por ejemplo, para frameworks de deserialización). */
-    public Questions() { }
+    /**
+     * Constructor vacío (por ejemplo, para frameworks de deserialización).
+     */
+    public Questions() {
+    }
 
     /**
      * Constructor completo.
@@ -96,7 +134,9 @@ public class Questions {
     /*                                Getter                              */
     /* ------------------------------------------------------------------ */
 
-    /** @return lista interna de preguntas. */
+    /**
+     * @return lista interna de preguntas.
+     */
     public List<Question> getQuestions() {
         return questions;
     }

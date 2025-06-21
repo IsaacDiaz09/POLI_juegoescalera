@@ -1,0 +1,924 @@
+{
+  "questions": [
+    {
+      "question": "<p>¿Cuál es el resultado de 85 + 47?</p>",
+      "answers": {
+        "a": "122",
+        "b": "132",
+        "c": "142",
+        "d": "112"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>Suma 152 + 341.</p>",
+      "answers": {
+        "a": "483",
+        "b": "503",
+        "c": "493",
+        "d": "494"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 99 + 19?</p>",
+      "answers": {
+        "a": "118",
+        "b": "108",
+        "c": "128",
+        "d": "119"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>Calcula 250 + 450.</p>",
+      "answers": {
+        "a": "600",
+        "b": "650",
+        "c": "700",
+        "d": "750"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es la suma de 73 + 88?</p>",
+      "answers": {
+        "a": "151",
+        "b": "161",
+        "c": "171",
+        "d": "141"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>Suma 305 + 195.</p>",
+      "answers": {
+        "a": "500",
+        "b": "490",
+        "c": "510",
+        "d": "495"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuánto es 64 + 79?</p>",
+      "answers": {
+        "a": "133",
+        "b": "153",
+        "c": "144",
+        "d": "143"
+      },
+      "correct": "d"
+    },
+    {
+      "question": "<p>Calcula 521 + 279.</p>",
+      "answers": {
+        "a": "790",
+        "b": "800",
+        "c": "810",
+        "d": "799"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>Suma 88 + 92.</p>",
+      "answers": {
+        "a": "180",
+        "b": "170",
+        "c": "190",
+        "d": "182"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 410 + 290?</p>",
+      "answers": {
+        "a": "600",
+        "b": "700",
+        "c": "800",
+        "d": "690"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 93 - 45?</p>",
+      "answers": {
+        "a": "38",
+        "b": "58",
+        "c": "48",
+        "d": "47"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>Resta 280 - 150.</p>",
+      "answers": {
+        "a": "120",
+        "b": "130",
+        "c": "140",
+        "d": "125"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuánto es 121 - 31?</p>",
+      "answers": {
+        "a": "90",
+        "b": "100",
+        "c": "80",
+        "d": "91"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>Calcula 500 - 275.</p>",
+      "answers": {
+        "a": "250",
+        "b": "235",
+        "c": "225",
+        "d": "325"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es la diferencia entre 88 y 39?</p>",
+      "answers": {
+        "a": "59",
+        "b": "49",
+        "c": "39",
+        "d": "51"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>Resta 740 - 360.</p>",
+      "answers": {
+        "a": "380",
+        "b": "480",
+        "c": "370",
+        "d": "420"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuánto es 164 - 78?</p>",
+      "answers": {
+        "a": "76",
+        "b": "96",
+        "c": "86",
+        "d": "84"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>Calcula 910 - 455.</p>",
+      "answers": {
+        "a": "465",
+        "b": "455",
+        "c": "445",
+        "d": "555"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>Resta 77 - 28.</p>",
+      "answers": {
+        "a": "49",
+        "b": "59",
+        "c": "51",
+        "d": "47"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 300 - 111?</p>",
+      "answers": {
+        "a": "189",
+        "b": "199",
+        "c": "289",
+        "d": "190"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Qué fracción es equivalente a 1/2?</p>",
+      "answers": {
+        "a": "2/3",
+        "b": "3/4",
+        "c": "4/8",
+        "d": "2/5"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 1/4 + 2/4?</p>",
+      "answers": {
+        "a": "3/8",
+        "b": "3/4",
+        "c": "1/4",
+        "d": "1/2"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es la mitad de 1/2?</p>",
+      "answers": {
+        "a": "1/4",
+        "b": "1/3",
+        "c": "1",
+        "d": "2/2"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>Simplifica la fracción 6/9.</p>",
+      "answers": {
+        "a": "1/3",
+        "b": "3/2",
+        "c": "2/3",
+        "d": "6/3"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 3/5 - 1/5?</p>",
+      "answers": {
+        "a": "2/5",
+        "b": "4/5",
+        "c": "2/10",
+        "d": "1/5"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Qué número representa la fracción 5/5?</p>",
+      "answers": {
+        "a": "5",
+        "b": "0",
+        "c": "1",
+        "d": "10"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Qué fracción es mayor: 1/3 o 1/4?</p>",
+      "answers": {
+        "a": "1/3",
+        "b": "1/4",
+        "c": "Son iguales",
+        "d": "No se puede saber"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuánto es 1/2 + 1/2?</p>",
+      "answers": {
+        "a": "1/4",
+        "b": "2/4",
+        "c": "1",
+        "d": "2"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>Simplifica la fracción 10/20.</p>",
+      "answers": {
+        "a": "1/2",
+        "b": "2/4",
+        "c": "5/10",
+        "d": "1/3"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 7/10 - 3/10?</p>",
+      "answers": {
+        "a": "4/5",
+        "b": "2/5",
+        "c": "1/2",
+        "d": "4/10"
+      },
+      "correct": "d"
+    },
+    {
+      "question": "<p>Calcula el 50% de 200.</p>",
+      "answers": {
+        "a": "50",
+        "b": "150",
+        "c": "100",
+        "d": "250"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el 25% de 80?</p>",
+      "answers": {
+        "a": "20",
+        "b": "25",
+        "c": "40",
+        "d": "15"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>Calcula el 10% de 150.</p>",
+      "answers": {
+        "a": "10",
+        "b": "25",
+        "c": "5",
+        "d": "15"
+      },
+      "correct": "d"
+    },
+    {
+      "question": "<p>¿Cuál es el 75% de 100?</p>",
+      "answers": {
+        "a": "25",
+        "b": "50",
+        "c": "75",
+        "d": "100"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>Calcula el 20% de 50.</p>",
+      "answers": {
+        "a": "5",
+        "b": "10",
+        "c": "15",
+        "d": "20"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>Si 40 es el 100%, ¿cuánto es el 50%?</p>",
+      "answers": {
+        "a": "10",
+        "b": "20",
+        "c": "30",
+        "d": "40"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el 1% de 1000?</p>",
+      "answers": {
+        "a": "1",
+        "b": "100",
+        "c": "10",
+        "d": "1000"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>Calcula el 30% de 300.</p>",
+      "answers": {
+        "a": "90",
+        "b": "60",
+        "c": "30",
+        "d": "100"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el 100% de 45?</p>",
+      "answers": {
+        "a": "100",
+        "b": "0",
+        "c": "45",
+        "d": "90"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>Calcula el 5% de 200.</p>",
+      "answers": {
+        "a": "5",
+        "b": "15",
+        "c": "20",
+        "d": "10"
+      },
+      "correct": "d"
+    },
+    {
+      "question": "<p>Suma 45 + 55.</p>",
+      "answers": {
+        "a": "90",
+        "b": "100",
+        "c": "110",
+        "d": "95"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>Calcula 670 + 230.</p>",
+      "answers": {
+        "a": "800",
+        "b": "900",
+        "c": "1000",
+        "d": "850"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 125 + 275?</p>",
+      "answers": {
+        "a": "400",
+        "b": "300",
+        "c": "500",
+        "d": "350"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>Resta 82 - 37.</p>",
+      "answers": {
+        "a": "55",
+        "b": "45",
+        "c": "35",
+        "d": "52"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es la diferencia de 450 y 180?</p>",
+      "answers": {
+        "a": "270",
+        "b": "370",
+        "c": "230",
+        "d": "330"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>Calcula 1000 - 550.</p>",
+      "answers": {
+        "a": "550",
+        "b": "350",
+        "c": "450",
+        "d": "500"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>Simplifica la fracción 8/12.</p>",
+      "answers": {
+        "a": "4/6",
+        "b": "2/3",
+        "c": "3/4",
+        "d": "1/2"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 4/7 + 2/7?</p>",
+      "answers": {
+        "a": "6/14",
+        "b": "2/7",
+        "c": "6/7",
+        "d": "1"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Qué fracción es menor: 2/3 o 2/5?</p>",
+      "answers": {
+        "a": "2/3",
+        "b": "Son iguales",
+        "c": "2/5",
+        "d": "No se puede saber"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>Calcula el 40% de 100.</p>",
+      "answers": {
+        "a": "100",
+        "b": "60",
+        "c": "40",
+        "d": "20"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el 60% de 50?</p>",
+      "answers": {
+        "a": "20",
+        "b": "30",
+        "c": "40",
+        "d": "25"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuánto es el 5% de 60?</p>",
+      "answers": {
+        "a": "3",
+        "b": "6",
+        "c": "5",
+        "d": "10"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>Suma 215 + 385.</p>",
+      "answers": {
+        "a": "500",
+        "b": "600",
+        "c": "590",
+        "d": "610"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>Resta 205 - 96.</p>",
+      "answers": {
+        "a": "119",
+        "b": "108",
+        "c": "99",
+        "d": "109"
+      },
+      "correct": "d"
+    },
+    {
+      "question": "<p>¿Cuánto es 1/3 + 1/3?</p>",
+      "answers": {
+        "a": "1/6",
+        "b": "2/6",
+        "c": "2/3",
+        "d": "1"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>Calcula el 80% de 200.</p>",
+      "answers": {
+        "a": "120",
+        "b": "140",
+        "c": "180",
+        "d": "160"
+      },
+      "correct": "d"
+    },
+    {
+      "question": "<p>¿Cuánto es 85 + 115?</p>",
+      "answers": {
+        "a": "200",
+        "b": "190",
+        "c": "210",
+        "d": "195"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>Resta 543 - 234.</p>",
+      "answers": {
+        "a": "311",
+        "b": "309",
+        "c": "209",
+        "d": "319"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>Simplifica la fracción 9/27.</p>",
+      "answers": {
+        "a": "1/3",
+        "b": "3/9",
+        "c": "1/4",
+        "d": "1/2"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el 15% de 200?</p>",
+      "answers": {
+        "a": "15",
+        "b": "20",
+        "c": "30",
+        "d": "25"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>Suma 999 + 1.</p>",
+      "answers": {
+        "a": "1001",
+        "b": "1000",
+        "c": "1010",
+        "d": "910"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>Resta 101 - 12.</p>",
+      "answers": {
+        "a": "88",
+        "b": "91",
+        "c": "89",
+        "d": "90"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuánto es 5/8 - 2/8?</p>",
+      "answers": {
+        "a": "3/8",
+        "b": "3/0",
+        "c": "7/8",
+        "d": "3/16"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>Calcula el 50% de 500.</p>",
+      "answers": {
+        "a": "250",
+        "b": "300",
+        "c": "200",
+        "d": "350"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuánto es 456 + 123?</p>",
+      "answers": {
+        "a": "579",
+        "b": "589",
+        "c": "569",
+        "d": "679"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>Resta 333 - 121.</p>",
+      "answers": {
+        "a": "212",
+        "b": "222",
+        "c": "232",
+        "d": "202"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Qué fracción es igual a 3/4?</p>",
+      "answers": {
+        "a": "6/8",
+        "b": "5/9",
+        "c": "4/7",
+        "d": "2/3"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el 25% de 400?</p>",
+      "answers": {
+        "a": "50",
+        "b": "150",
+        "c": "100",
+        "d": "200"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>Suma 78 + 22.</p>",
+      "answers": {
+        "a": "90",
+        "b": "110",
+        "c": "100",
+        "d": "101"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>Resta 99 - 44.</p>",
+      "answers": {
+        "a": "55",
+        "b": "45",
+        "c": "65",
+        "d": "50"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 1 - 1/2?</p>",
+      "answers": {
+        "a": "1/2",
+        "b": "1/4",
+        "c": "0",
+        "d": "1"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>Calcula el 10% de 10.</p>",
+      "answers": {
+        "a": "10",
+        "b": "2",
+        "c": "5",
+        "d": "1"
+      },
+      "correct": "d"
+    },
+    {
+      "question": "<p>Suma 180 + 120.</p>",
+      "answers": {
+        "a": "300",
+        "b": "200",
+        "c": "400",
+        "d": "250"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>Resta 250 - 75.</p>",
+      "answers": {
+        "a": "125",
+        "b": "175",
+        "c": "225",
+        "d": "150"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>Simplifica la fracción 25/100.</p>",
+      "answers": {
+        "a": "1/2",
+        "b": "1/3",
+        "c": "1/4",
+        "d": "1/5"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el 20% de 150?</p>",
+      "answers": {
+        "a": "20",
+        "b": "30",
+        "c": "40",
+        "d": "25"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>Suma 65 + 35.</p>",
+      "answers": {
+        "a": "110",
+        "b": "90",
+        "c": "100",
+        "d": "105"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>Resta 87 - 58.</p>",
+      "answers": {
+        "a": "29",
+        "b": "39",
+        "c": "19",
+        "d": "31"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 2/5 + 3/5?</p>",
+      "answers": {
+        "a": "5/10",
+        "b": "1",
+        "c": "5/25",
+        "d": "4/5"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>Calcula el 75% de 200.</p>",
+      "answers": {
+        "a": "100",
+        "b": "125",
+        "c": "150",
+        "d": "175"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>Suma 345 + 255.</p>",
+      "answers": {
+        "a": "500",
+        "b": "600",
+        "c": "590",
+        "d": "610"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>Resta 400 - 125.</p>",
+      "answers": {
+        "a": "325",
+        "b": "225",
+        "c": "275",
+        "d": "375"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Qué fracción es igual a 1?</p>",
+      "answers": {
+        "a": "1/10",
+        "b": "8/9",
+        "c": "10/10",
+        "d": "1/2"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el 90% de 100?</p>",
+      "answers": {
+        "a": "10",
+        "b": "90",
+        "c": "100",
+        "d": "9"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>Suma 81 + 19.</p>",
+      "answers": {
+        "a": "100",
+        "b": "90",
+        "c": "110",
+        "d": "99"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>Resta 76 - 38.</p>",
+      "answers": {
+        "a": "48",
+        "b": "28",
+        "c": "38",
+        "d": "42"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>¿Cuál es el resultado de 1/5 + 3/5?</p>",
+      "answers": {
+        "a": "4/10",
+        "b": "2/5",
+        "c": "4/5",
+        "d": "1"
+      },
+      "correct": "c"
+    },
+    {
+      "question": "<p>Calcula el 1% de 200.</p>",
+      "answers": {
+        "a": "20",
+        "b": "2",
+        "c": "0.2",
+        "d": "1"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>Suma 555 + 445.</p>",
+      "answers": {
+        "a": "900",
+        "b": "1000",
+        "c": "990",
+        "d": "1100"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>Resta 650 - 325.</p>",
+      "answers": {
+        "a": "325",
+        "b": "300",
+        "c": "350",
+        "d": "330"
+      },
+      "correct": "a"
+    },
+    {
+      "question": "<p>Simplifica la fracción 15/45.</p>",
+      "answers": {
+        "a": "1/2",
+        "b": "1/3",
+        "c": "1/4",
+        "d": "1/5"
+      },
+      "correct": "b"
+    },
+    {
+      "question": "<p>¿Cuál es el 30% de 150?</p>",
+      "answers": {
+        "a": "30",
+        "b": "50",
+        "c": "45",
+        "d": "35"
+      },
+      "correct": "c"
+    }
+  ]
+}

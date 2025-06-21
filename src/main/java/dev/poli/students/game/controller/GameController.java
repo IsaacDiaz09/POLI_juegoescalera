@@ -10,10 +10,10 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -25,21 +25,26 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
+import java.util.Objects;
 
 public class GameController {
 
     @FXML
     public ImageView mapImage;
-
-    @FXML
-    public Label resultsLabel;
-
     @FXML
     public Button addPlayer;
-
     @FXML
-    public Text playersList;
-
+    public WebView webView;
+    @FXML
+    public Circle player1Circle;
+    @FXML
+    public Circle player2Circle;
+    @FXML
+    public Circle player3Circle;
+    @FXML
+    public Circle player4Circle;
+    @FXML
+    public Text resultsLabel;
     @FXML
     private Button gameStart;
 
@@ -78,15 +83,36 @@ public class GameController {
             gameStart.setVisible(true);
             gameStart.setDisable(false);
 
-            StringBuilder sb = new StringBuilder("Lista de jugadores: \n");
-            for (Player player : PlayerController.PLAYERS) {
-                sb.append("- ");
-                sb.append(player.getName());
-                sb.append("\n");
-            }
-            logger.info("label={}", sb);
-            playersList.setText(sb.toString());
+            printResults(null);
         }
+    }
+
+    private void printResults(Player playerInTurn) {
+        StringBuilder sb = new StringBuilder("Lista de jugadores: \n");
+        if (playerInTurn == null) {
+            sb.append("El juego no ha iniciado todavia.");
+            for (Player player : PlayerController.PLAYERS) {
+                sb.append("\n")
+                        .append("- ")
+                        .append(player.getName());
+            }
+        } else {
+            sb.append("Juego en curso. Turno no. ")
+                    .append(playerInTurn.getCurrentTurn())
+                    .append(" de ")
+                    .append(playerInTurn.getName());
+
+            for (Player player : PlayerController.PLAYERS) {
+                sb.append("\n")
+                        .append("- ")
+                        .append(player.getName())
+                        .append(" - Puntuacion: ")
+                        .append(player.getCorrectlyAnsweredQuestions())
+                        .append("\n");
+            }
+        }
+
+        resultsLabel.setText(sb.toString());
     }
 
     private void initializeApplicationContext() throws IOException {
@@ -95,17 +121,27 @@ public class GameController {
         MapsConfiguration gameMaps = mapper.readValue(Files.readAllBytes(configuration), MapsConfiguration.class);
         ApplicationContext.addBean(gameMaps);
 
-        GameConfiguration gameConfig = new GameConfiguration(gameMaps.defaultMap(),gameMaps);
+        GameConfiguration gameConfig = new GameConfiguration(gameMaps.defaultMap(), gameMaps);
 
         Game game = new Game(PlayerController.PLAYERS, gameConfig);
         ApplicationContext.addBean(game);
 
         // load questions
-        Path questions1Path = Paths.get("src/main/resources/config/questions.easy.json");
-        Questions easyQuestions = mapper.readValue(Files.readAllBytes(questions1Path), Questions.class);
-
+        Path easyQuestionsPath = Paths.get("src/main/resources/config/questions.easy.json");
+        Questions easyQuestions = mapper.readValue(Files.readAllBytes(easyQuestionsPath), Questions.class);
         ApplicationContext.addBean(Questions.EASY, easyQuestions);
-        ApplicationContext.addBean(new TurnManager(PlayerController.PLAYERS));
+
+        Path mediumQuestionsPath = Paths.get("src/main/resources/config/questions.medium.json");
+        Questions mediumQuestions = mapper.readValue(Files.readAllBytes(mediumQuestionsPath), Questions.class);
+        ApplicationContext.addBean(Questions.MEDIUM, mediumQuestions);
+
+        Path hardQuestionsPath = Paths.get("src/main/resources/config/questions.hard.json");
+        Questions hardQuestions = mapper.readValue(Files.readAllBytes(hardQuestionsPath), Questions.class);
+        ApplicationContext.addBean(Questions.HARD, hardQuestions);
+
+        TurnManager turnManager = new TurnManager(PlayerController.players(player1Circle, player2Circle,
+                player3Circle, player4Circle));
+        ApplicationContext.addBean(turnManager);
     }
 
     private void displayQuestion() {
@@ -122,33 +158,46 @@ public class GameController {
                 .getRandomQuestion();
 
         TurnManager turnManager = ApplicationContext.getBean(TurnManager.class);
-        Player player = turnManager.nextTurn();
-        logger.info("turno de {}", player.getName());
+        Pair<Player, Circle> p = turnManager.nextTurn();
+        Player player = p.getLeft();
+        printResults(player);
 
-        stage.setTitle("Turno de: " + player.getName());
-        webView.getEngine().loadContent(question.getQuestion());
+        // do only in the first turn
+        if (player.getCurrentTurn() == 1) {
+            p.getRight().setVisible(true);
+            p.getRight().setFill(player.getColor());
+        }
+
+        StringBuilder questionContent = new StringBuilder(question.getQuestion());
+        for (Map.Entry<String, String> answer : question.getAnswers().entrySet()) {
+            String answerContent = String.format("<p>%s.) %s</p>", answer.getKey(), answer.getValue());
+            questionContent.append(answerContent);
+        }
+        webView.getEngine().loadContent(questionContent.toString());
 
         HBox buttonsContainer = new HBox(10);
         buttonsContainer.setAlignment(Pos.CENTER);
         buttonsContainer.setPadding(new Insets(15, 15, 15, 15));
 
         for (Map.Entry<String, String> answer : question.getAnswers().entrySet()) {
-            Button button = new Button("button-" + answer.hashCode());
-            button.setText(answer.getValue());
+            Button button = new Button("button-" + Objects.hash(question.getQuestion(), answer.getValue()));
+            button.setText(answer.getKey());
             button.setVisible(true);
             button.setOnAction((e) -> questionAnswered(e, turnManager, question));
             buttonsContainer.getChildren().add(button);
         }
 
-        webView.setMaxHeight(150);
+        webView.setMaxHeight(250);
         webView.setMaxWidth(350);
 
         root.setTop(webView);
         root.setBottom(buttonsContainer);
 
         Scene scene = new Scene(root, 350, 300);
-        stage.setTitle("Pregunta");
         stage.setScene(scene);
+        String title = String.format("Turno no. %s de %s", player.getCurrentTurn(), player.getName());
+        stage.setOnCloseRequest(e -> logger.info("Question has been closed"));
+        stage.setTitle(title);
         stage.show();
     }
 
@@ -157,16 +206,14 @@ public class GameController {
         String answer = source.getText();
         turnManager.incrementOkAnsweredQuestions();
 
-        String correctAnswer = question.getAnswers().get(question.getCorrectAnswer());
-
-        if (answer.equals(correctAnswer)) {
+        if (question.getCorrectAnswer().equals(answer)) {
             logger.info("La respuesta es correcta: [{}/{}]", question.getQuestion(), answer);
         } else {
             logger.error("La respuesta es incorrecta");
         }
     }
 
-    private Question getQuestion() {
+    private Question getQuestion(Questions.Difficulty difficulty) {
         Questions questions = ApplicationContext.getBean(Questions.EASY, Questions.class);
         return questions.getRandomQuestion();
     }
