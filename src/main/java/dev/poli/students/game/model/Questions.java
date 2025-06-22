@@ -49,26 +49,31 @@ public class Questions {
      * o filtrar bancos de preguntas en memoria.
      */
     public enum Difficulty {
-        EASY("Facil"),
-        MEDIUM("Medio"),
-        HARD("Dificil");
+        EASY("Facil", 3),
+        MEDIUM("Medio", 2),
+        HARD("Dificil", 3);
 
-        Difficulty(String description) {
+        private final String description;
+        private final int points;
+
+        Difficulty(String description, int points) {
             this.description = description;
+            this.points = points;
         }
 
-        public Difficulty byName(String name) {
+        public static Difficulty byName(String name) {
             return Stream.of(Difficulty.values())
-                    .filter(d -> d.toString().equals(name))
+                    .filter(d -> d.getDescription().equals(name))
                     .findFirst()
                     .orElseThrow();
         }
 
-        private final String description;
+        public String getDescription() {
+            return description;
+        }
 
-        @Override
-        public String toString() {
-            return this.description;
+        public int getPoints() {
+            return points;
         }
     }
 

@@ -31,7 +31,7 @@ public class MapConfiguration {
 
     /** Lista de escaleras/serpientes asociadas al mapa. */
     @JsonProperty("comodins")
-    private List<Object> comodins; // se usa Object para compatibilidad; idealmente List<Comodin>
+    private List<Comodin> comodins;
 
     /* ------------------------------------------------------------------ */
     /*                         Clase interna: Comodin                     */
@@ -110,7 +110,7 @@ public class MapConfiguration {
      */
     public MapConfiguration(String mapId,
                             String imagePath,
-                            List<Object> comodins) {
+                            List<Comodin> comodins) {
         this.mapId     = mapId;
         this.imagePath = imagePath;
         this.comodins  = comodins;
@@ -128,10 +128,8 @@ public class MapConfiguration {
 
     /**
      * Devuelve la lista de comodines (escaleras o serpientes).
-     * Nota: el tipo genérico se mantiene como {@code List<Object>} para
-     * compatibilidad con Jackson; idealmente debería ser {@code List<Comodin>}.
      *
      * @return lista de comodines.
      */
-    public List<Object> getComodins() { return comodins; }
+    public List<Comodin> getComodins() { return comodins; }
 }

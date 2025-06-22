@@ -18,7 +18,7 @@ public class TurnManager {
     /**
      * Jugador cuyo turno está en curso (último entregado por {@link #nextTurn()}).
      */
-    private Player player;
+    private Pair<Player, Circle> player;
 
     /**
      * Registra los nombres de los jugadores que ya han jugado en la ronda.
@@ -72,7 +72,7 @@ public class TurnManager {
         Pair<Player, Circle> p = players.get(state.size());
         state.add(p.getLeft().getName()); // registramos que ya jugó
         p.getLeft().nextTurn();           // actualizamos su contador interno
-        this.player = p.getLeft();        // lo marcamos como jugador actual
+        this.player = p;        // lo marcamos como jugador actual
         return p;
     }
 
@@ -81,7 +81,7 @@ public class TurnManager {
      * que está en turno (el último devuelto por {@link #nextTurn()}).
      */
     public void incrementOkAnsweredQuestions() {
-        this.player.okAnsweredQuestion();
+        this.player.getLeft().okAnsweredQuestion();
     }
 
     /* ------------------------------------------------------------------ */
@@ -94,7 +94,7 @@ public class TurnManager {
      * @return jugador en turno, o {@code null} si aún no se ha invocado
      * {@link #nextTurn()}.
      */
-    public Player getPlayer() {
+    public Pair<Player, Circle> getPlayer() {
         return player;
     }
 }

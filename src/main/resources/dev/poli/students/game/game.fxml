@@ -22,13 +22,13 @@
     <bottom>
         <VBox alignment="CENTER">
             <Button fx:id="addPlayer" mnemonicParsing="false" onMouseClicked="#openNewWindow" text="Agregar jugador" />
-            <Button fx:id="gameStart" mnemonicParsing="false" onMouseClicked="#doStartGame" text="Iniciar Juego" visible="false" />
+            <Button fx:id="gameStart" mnemonicParsing="false" onMouseClicked="#doChoiceQuestionDifficulty" text="Iniciar Juego" visible="false" />
         </VBox>
     </bottom>
 
     <!-- StackPane to contain the ImageView and Circle, placed in the center of the BorderPane -->
     <center>
-        <StackPane>
+        <StackPane fx:id="pane">
             <!-- ImageView to display the background image -->
             <ImageView fx:id="mapImage" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@../../../../img/map_01.png" />

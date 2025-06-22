@@ -30,6 +30,8 @@ public class Player {
     /** Número de turno actual (incrementa cada vez que el jugador responde). */
     private int currentTurn = 0;
 
+    private int currentCell;
+
     /** Total de preguntas respondidas correctamente. */
     private int correctlyAnsweredQuestions = 0;
 
@@ -46,6 +48,7 @@ public class Player {
     public Player(String name, Color color) {
         this.name  = name;
         this.color = color;
+        this.currentCell = 1;
     }
 
     /* ------------------------------------------------------------------ */
@@ -62,6 +65,13 @@ public class Player {
         this.correctlyAnsweredQuestions++;
     }
 
+    public int getCurrentCell() {
+        return currentCell;
+    }
+
+    public void setCurrentCell(int currentCell) {
+        this.currentCell = currentCell;
+    }
     /* ------------------------------------------------------------------ */
     /*                                Getters                             */
     /* ------------------------------------------------------------------ */
