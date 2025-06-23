@@ -49,7 +49,7 @@ public class Questions {
      * o filtrar bancos de preguntas en memoria.
      */
     public enum Difficulty {
-        EASY("Facil", 3),
+        EASY("Facil", 9),
         MEDIUM("Medio", 2),
         HARD("Dificil", 3);
 

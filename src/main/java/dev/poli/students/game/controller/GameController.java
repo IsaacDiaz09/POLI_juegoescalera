@@ -18,7 +18,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
-import javafx.scene.transform.Translate;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
@@ -29,6 +28,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class GameController {
 
@@ -135,14 +135,21 @@ public class GameController {
             sb.append("Juego en curso. Turno no. ")
                     .append(playerInTurn.getCurrentTurn())
                     .append(" de ")
-                    .append(playerInTurn.getName());
+                    .append(playerInTurn.getName())
+                    .append("\n");
 
-            for (Player player : PlayerController.PLAYERS) {
-                sb.append("\n")
+            List<Player> players = PlayerController.PLAYERS.stream()
+                    .sorted(Comparator.comparing(Player::getCorrectlyAnsweredQuestions))
+                    .collect(Collectors.toList());
+
+            for (Player player : players) {
+                sb
                         .append("- ")
                         .append(player.getName())
                         .append(" - Puntuacion: ")
                         .append(player.getCorrectlyAnsweredQuestions())
+                        .append(" - Casilla actual: ")
+                        .append(player.getCurrentCell())
                         .append("\n");
             }
         }
@@ -251,32 +258,8 @@ public class GameController {
         // move player circle/pointer to the correct cell
         int newPosition = playerInTurn.getCurrentCell() + points;
 
-        //int xIncrement = (newPosition % 10) - (playerInTurn.getCurrentCell() % 10);
-        //int yIncrement = 0;
-
-        //if ((newPosition / 10) > 0) {
-        //    yIncrement = (newPosition / 10) - (playerInTurn.getCurrentCell() % 10);
-        //}
-
-        //double xPosition = xIncrement * 44;
-        //double yPosition = yIncrement * 39;
-
-        //Circle playerPointer = turnManager.getPlayer().getRight();
-
-        //if (correctAnswer || playerInTurn.getCurrentTurn() > 1) {
-        //    Translate translate = new Translate();
-        //    translate.setX(xPosition);
-        //    if (yPosition > 0) {
-        //        translate.setY(yPosition);
-        //    }
-
-        //    playerPointer.getTransforms().add(translate);
-        //    playerInTurn.setCurrentCell(newPosition);
-        //    logger.info("updated player position to cell no. {}", newPosition);
-        //}
-
         Circle playerPointer = turnManager.getPlayer().getRight();
-        updatePlayerPositionInMap(playerInTurn, playerPointer, newPosition);
+        updatePlayerPositionInMap (playerInTurn, playerPointer, newPosition);
 
         if (question.getCorrectAnswer().equals(answer)) {
             logger.info("La respuesta es correcta: [{}/{}]", question.getQuestion(), answer);
@@ -298,6 +281,12 @@ public class GameController {
 
         // show game summary
         printResults(playerInTurn);
+
+        if (playerInTurn.getCurrentCell() >= 100) {
+            showInfoAlert("El jugador %s ha ganado!!!", playerInTurn.getName());
+            ApplicationContext.getBean(Game.class).declareWinner(playerInTurn);
+            return;
+        }
 
         //triger next turn
         doChoiceQuestionDifficulty();
@@ -350,39 +339,38 @@ public class GameController {
     }
 
     private void updatePlayerPositionInMap(Player player, Circle pointer, int newPosition) {
-        int xIncrement = (newPosition % 10) - (player.getCurrentCell() % 10);
-        int yIncrement = (newPosition / 10) - (player.getCurrentCell() / 10);
-
-        double xPosition = 0;
-        double yPosition = yIncrement * -39;
-
-        if (yIncrement > 0) {
-            yIncrement = yIncrement * 39;
-            xIncrement = 1;
-            for (Integer i: getXAxisNearestValue(newPosition)) {
-                if (i == newPosition) {
-                    break;
-                }
-                xIncrement++;
-            }
-            xIncrement = player.getCurrentCell() - xIncrement;
-        }
-
-        // placement over X depends on Which Y column am I
-        if (yIncrement % 2 == 0) {
-            xPosition = xIncrement * 44;
-            logger.info("Right to Left movement");
-        } else {
-            xPosition = xIncrement * -44;
-            logger.info("Left to Right movement");
-        }
+//        int xIncrement = (newPosition % 10) - (player.getCurrentCell() % 10);
+//        int yIncrement = (newPosition / 10) - (player.getCurrentCell() / 10);
+//
+//        double xPosition = 0;
+//        double yPosition = yIncrement * -39;
+//
+//        if (yIncrement > 0) {
+//            yIncrement = yIncrement * 39;
+//            xIncrement = 1;
+//            for (Integer i : getXAxisNearestValue(newPosition)) {
+//                if (i == newPosition) {
+//                    break;
+//                }
+//                xIncrement++;
+//            }
+//            xIncrement = player.getCurrentCell() - xIncrement;
+//        }
+//
+//        if (xIncrement == -10) {
+//            xIncrement++;
+//        }
+//
+//        // placement over X depends on Which Y column am I
+//        if (yIncrement % 2 == 0) {
+//            xPosition = xIncrement * 44;
+//            logger.info("Right to Left movement");
+//        } else {
+//            xPosition = xIncrement * -44;
+//            logger.info("Left to Right movement");
+//        }
 
         if (newPosition >= 1 && player.getCurrentTurn() >= 1) {
-            Translate translate = new Translate();
-            translate.setX(xPosition);
-            translate.setY(yPosition);
-
-            pointer.getTransforms().add(translate);
             player.setCurrentCell(newPosition);
             logger.info("updated player position to cell no. {}", newPosition);
         }
